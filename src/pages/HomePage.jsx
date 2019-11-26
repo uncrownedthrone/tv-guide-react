@@ -1,8 +1,28 @@
 import React from 'react'
-import HelloWorld from '../components/HelloWorld'
+import axios from 'axios'
+import HomePageData from '../components/HomePageData'
 
 const HomePage = () => {
-  return <HelloWorld />
+  return (
+    <>
+      <h1>Netflix and...</h1>
+      <div>
+        {/* <ul>
+          {movies.map(movie => {
+            return (
+              <MovieData
+                key={movie.id}
+                image={movie.poster_path}
+                title={movie.title}
+                releaseDate={movie.release_date}
+                overview={movie.overview}
+              />
+            )
+          })}
+        </ul> */}
+      </div>
+    </>
+  )
 }
 
 export default HomePage
