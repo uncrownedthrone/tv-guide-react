@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Page = () => {
-  return <div>This is a Page</div>
+const Page2 = () => {
+  return <div>This is another Page</div>
 }
 
-export default Page
+export default Page2
