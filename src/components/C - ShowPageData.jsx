@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
-const CastMemberList = props => {
+const CastMemberList = () => {
   const [showID, setShowID] = useState('')
+  const [castData, setCastData] = useState()
 
   // get show id for cast API call
   const getShowData = async () => {
@@ -17,6 +19,7 @@ const CastMemberList = props => {
       `https://api.themoviedb.org/3/tv/${showID}/credits?api_key=beef9ba86ca8277fb3da8d91389f491d&language=en-US`
     )
     console.log(castResp.data)
+    setCastData(castResp.cast)
   }
 
   useEffect(() => {
@@ -25,19 +28,25 @@ const CastMemberList = props => {
   }, [])
 
   return (
-    <li>
-      <section className="cast-member-container">
-        <section className="cast-info-container">
-          <p className="cast-name">{castResp.cast.name}</p>
-          <p className="character-name">{castResp.cast.character}</p>
-        </section>
-        <section className="cast-picture-container">
-          <img
-            src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${castResp.cast.profile_path}`}
-          />
-        </section>
-      </section>
-    </li>
+    <ul>
+      {castData.map(member => {
+        return (
+          <li>
+            <section className="cast-member-container">
+              <section className="cast-info-container">
+                <p className="cast-name">{castData.name}</p>
+                <p className="character-name">{castData.character}</p>
+              </section>
+              <section className="cast-picture-container">
+                <img
+                  src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${castData.profile_path}`}
+                />
+              </section>
+            </section>
+          </li>
+        )
+      })}
+    </ul>
   )
 }
 

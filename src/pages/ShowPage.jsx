@@ -1,7 +1,15 @@
 import React from 'react'
+import CastMemberList from '../components/CastMemberList'
 
-const Page2 = () => {
-  return <div>This is another Page</div>
+const Page = () => {
+  return (
+    <div>
+      <section></section>
+      <section>
+        <CastMemberList />
+      </section>
+    </div>
+  )
 }
 
 export default Page2
