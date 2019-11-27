@@ -7,6 +7,7 @@ const HomePage = () => {
   return (
     <>
       <h1>Netflix and...</h1>
+      <h2>The Top Rated TV Shows</h2>
       <div>
         {/* <ul>
           {movies.map(movie => {
