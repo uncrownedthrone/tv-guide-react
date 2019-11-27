@@ -1,53 +1,39 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const CastMemberList = () => {
-  const [showID, setShowID] = useState('')
-  const [castData, setCastData] = useState()
-
-  // get show id for cast API call
-  const getShowData = async () => {
-    const showResp = await axios.get(
-      `https://api.themoviedb.org/3/tv/top_rated?api_key=beef9ba86ca8277fb3da8d91389f491d&language=en-US&page=1`
-    )
-    setShowID(showResp.data.results.id)
-  }
-
-  // get cast member API data
-  const getCastData = async () => {
-    const castResp = await axios.get(
-      `https://api.themoviedb.org/3/tv/${showID}/credits?api_key=beef9ba86ca8277fb3da8d91389f491d&language=en-US`
-    )
-    console.log(castResp.data)
-    setCastData(castResp.cast)
-  }
-
-  useEffect(() => {
-    getShowData()
-    getCastData()
-  }, [])
-
-  return (
-    <ul>
-      {castData.map(member => {
-        return (
-          <li>
-            <section className="cast-member-container">
-              <section className="cast-info-container">
-                <p className="cast-name">{castData.name}</p>
-                <p className="character-name">{castData.character}</p>
-              </section>
-              <section className="cast-picture-container">
-                <img
-                  src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${castData.profile_path}`}
-                />
-              </section>
-            </section>
-          </li>
-        )
-      })}
-    </ul>
+const getShowData = async () => {
+  const showResp = await axios.get(
+    `https://api.themoviedb.org/3/tv/top_rated?api_key=0e8aba4bfd1f0badefbdd05a4949c889&language=en-US&page=1`
   )
+  setShowID(showResp.data.results.id)
 }
 
-export default CastMemberList
+const getCastData = async () => {
+  const castResp = await axios.get(
+    `https://api.themoviedb.org/3/tv/${showID}/credits?api_key=0e8aba4bfd1f0badefbdd05a4949c889&language=en-US`
+  )
+  console.log(castResp.data)
+  setCastData(castResp.cast)
+}
+
+useEffect(() => {
+  console.log('using the effect')
+  getShowData()
+  getCastData()
+}, [])
+
+return (
+  <ul>
+    {showData.map(show => {
+      return (
+        <section className="ShowInfo">
+          <h1 className="ShowTitle">{showData.title}</h1>
+          <img className="ShowPoster" src={showData.poster_path}></img>
+          <h2 className="AirDate">{showData.first_air_date}</h2>
+          <p className="ShowOverview">{showData.overview}</p>
+        </section>
+      )
+    })}
+  </ul>
+)
+export default ShowData
