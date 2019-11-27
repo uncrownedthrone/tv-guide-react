@@ -1,17 +1,12 @@
 import React from 'react'
+import ShowAPIInfo from '../components/J - HomePageData'
 
 const HomePage = () => {
   return (
     <>
-      <div>
-        <img src="" alt="" />
-        <li>
-          {}
-          <br></br>
-        </li>
-        <li></li>
-      </div>
+      <ShowAPIInfo />
     </>
   )
 }
+
 export default HomePage
