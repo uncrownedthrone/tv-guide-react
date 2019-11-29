@@ -1,7 +1,7 @@
 import React from 'react'
-import CastMemberList from '../components/CastMemberList'
+import CastMemberList from '../components/C - CastMemberShows'
 
-const Page = () => {
+const ShowPage = () => {
   return (
     <div>
       <section></section>
@@ -12,4 +12,4 @@ const Page = () => {
   )
 }
 
-export default Page2
+export default ShowPage
