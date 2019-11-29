@@ -8,9 +8,10 @@ import CastMemberShowsPage from './pages/CastMemberShowsPage'
 const App = () => {
   return (
     <Router>
+      <h1>Netflix and ...</h1>
       <header>
-        <h1>Netflix and ...</h1>
-        <nav>
+        {/* commented out since nav isn't needed but keeping just in case */}
+        {/* <nav>
           <ul>
             <li>
               <Link to="/">Go Home</Link>
@@ -22,7 +23,7 @@ const App = () => {
               <Link to="/castpage">Cast Member Page</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </header>
       <Switch>
         <Route exact path="/" component={HomePage}></Route>

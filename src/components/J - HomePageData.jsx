@@ -1,8 +1,7 @@
 // DONE get JSON data from api
 // DONE add random show picker for top div
 // DONE show all needed data on home page
-
-// TODO main page set up and styling
+// DONE main page set up and styling
 
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -33,50 +32,34 @@ const ShowAPIInfo = () => {
           <img
             className="randomShowCover"
             src={`https://image.tmdb.org/t/p/w500${tvShow[random].poster_path}`}
+            alt=""
           />
           <section className="randomShowName">
             <h2>{tvShow[random].name}</h2>
-            <p>Rating: {tvShow[random].vote_average}</p>
+            <p className="rating">Rating: {tvShow[random].vote_average}</p>
           </section>
         </section>
         <section className="allShows">
-          <h1>Top Rated Shows</h1>
-          <section>
-            <ul className="showDetails">
-              {tvShow.map((show, i) => {
-                return (
-                  <div key={i} show={show}>
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500${show.poster_path}`}
-                    />
-                    <li className="title">{show.name}</li>
-                    <br></br>
-                    <li>Rating: {show.vote_average}</li>
-                    <li>Overview: {show.overview}</li>
-                  </div>
-                )
-              })}
-            </ul>
-          </section>
+          <ul className="showDetails">
+            {tvShow.map((show, i) => {
+              return (
+                <div key={i} show={show}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${show.poster_path}`}
+                    alt=""
+                    className="showCover"
+                  />
+                  <li className="title">{show.name}</li>
+                  <br></br>
+                  <li className="rating">Rating: {show.vote_average}</li>
+                  <li>Overview: {show.overview}</li>
+                </div>
+              )
+            })}
+          </ul>
         </section>
       </section>
     </>
   )
-}
-
-// test push to verify clone done correctly
-
-{
-  /* <Link
-  className="show-name"
-  to={{
-    pathname: `/${show.id}`,
-    state: { show },
-  }}
->
-  <img
-    className="other-image"
-    src={`https://image.tmdb.org/t/p/w500${show.poster_path}`}
-  /> */
 }
 export default ShowAPIInfo
