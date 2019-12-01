@@ -49,11 +49,12 @@ const ShowInfo = props => {
           {castData.map(member => {
             return (
               <li>
-                <h3 className="CharacterInfo">{castData.character}</h3>
-                <h4 className="CastInfo">{castData.name}</h4>
+                <h3 className="CharacterInfo">{member.character}</h3>
+                <h4 className="CastInformation">{castData.name}</h4>
+                <Link to={'/CastPage/' + member.id}>{member.name}</Link>
                 <img
                   className="CastImage"
-                  src={`https://image.tmdb.org/t/p/w500${castData.profile_path}`}
+                  src={`https://image.tmdb.org/t/p/w500${member.profile_path}`}
                 ></img>
               </li>
             )
