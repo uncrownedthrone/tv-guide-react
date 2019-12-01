@@ -18,7 +18,7 @@ const CastMemberInfo = props => {
   }, [])
 
   return (
-    <div>
+    <section>
       <section>
         <img
           src={`https://image.tmdb.org/t/p/w500${memberData.profile_path}`}
@@ -27,7 +27,7 @@ const CastMemberInfo = props => {
           {memberData.name} - {memberData.biography}
         </p>
       </section>
-    </div>
+    </section>
   )
 }
 

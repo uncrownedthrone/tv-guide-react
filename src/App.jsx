@@ -8,7 +8,6 @@ import CastMemberShowsPage from './pages/CastMemberShowsPage'
 const App = () => {
   return (
     <Router>
-      <h1>TV Showcase Showdown!</h1>
       <header>
         {/* commented out since nav isn't needed but keeping just in case */}
         {/* <nav>
