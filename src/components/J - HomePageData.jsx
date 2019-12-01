@@ -52,7 +52,6 @@ const ShowAPIInfo = () => {
                   />
                   <li className="title">
                     <Link to={'/ShowPage/' + show.id}>{show.name}</Link>
-                    {console.log(show.id)}
                   </li>
                   <br></br>
                   <li className="rating">Rating: {show.vote_average}</li>
