@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const ShowAPIInfo = () => {
   const [tvShow, setTvShow] = useState([[]])
@@ -49,7 +50,10 @@ const ShowAPIInfo = () => {
                     alt=""
                     className="showCover"
                   />
-                  <li className="title">{show.name}</li>
+                  <li className="title">
+                    <Link to={'/ShowPage/' + show.id}>{show.name}</Link>
+                    {console.log(show.id)}
+                  </li>
                   <br></br>
                   <li className="rating">Rating: {show.vote_average}</li>
                   <li>Overview: {show.overview}</li>
