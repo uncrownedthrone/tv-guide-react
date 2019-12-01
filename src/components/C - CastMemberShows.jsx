@@ -6,10 +6,11 @@ const CastMemberInfo = props => {
 
   const getMemberData = async () => {
     // pull API data according to the ID in the URL that was <Linked
-    const memberResp = await axios.post(
-      `https://api.themoviedb.org/3/person/${props.match.params.memberID}?api_key=17cb5378f871124dfc852a9d103647e3&language=en-US&append_to_response=tv_credits'`
+    const memberResp = await axios.get(
+      `https://api.themoviedb.org/3/person/${props.member}?api_key=17cb5378f871124dfc852a9d103647e3&language=en-US&append_to_response=tv_credits'`
     )
     setMemberData(memberResp.data)
+    console.log(memberResp.data)
   }
 
   useEffect(() => {
@@ -26,18 +27,6 @@ const CastMemberInfo = props => {
           {memberData.name} - {memberData.biography}
         </p>
       </section>
-      <ul>
-        {memberData.cast.map(credits => {
-          return (
-            <li>
-              <p>
-                {credits.character} in {credits.original_name}
-              </p>
-              <p>{credits.first_air_date}</p>
-            </li>
-          )
-        })}
-      </ul>
     </div>
   )
 }

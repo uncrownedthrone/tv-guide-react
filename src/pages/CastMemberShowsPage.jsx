@@ -1,10 +1,10 @@
 import React from 'react'
 import CastMemberInfo from '../components/C - CastMemberShows'
 
-const CastMemberShowsPage = () => {
+const CastMemberShowsPage = props => {
   return (
     <>
-      <CastMemberInfo />
+      <CastMemberInfo member={props.match.params.member} />
     </>
   )
 }
