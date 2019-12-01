@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+const CastMemberInfo = props => {
+  const [showData, setShowData] = useState([])
+
 const getShowData = async () => {
   const showResp = await axios.get(
     `https://api.themoviedb.org/3/tv/top_rated?api_key=0e8aba4bfd1f0badefbdd05a4949c889&language=en-US&page=1`
   )
-  setShowID(showResp.data.results.id)
+  setShowData(showResp.data.results.id)
 }
 
 const getCastData = async () => {
   const castResp = await axios.get(
-    `https://api.themoviedb.org/3/tv/${showID}/credits?api_key=0e8aba4bfd1f0badefbdd05a4949c889&language=en-US`
+    `https://api.themoviedb.org/3/tv/${showgitID}/credits?api_key=0e8aba4bfd1f0badefbdd05a4949c889&language=en-US`
   )
   console.log(castResp.data)
   setCastData(castResp.cast)
