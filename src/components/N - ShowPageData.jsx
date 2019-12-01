@@ -37,3 +37,4 @@ return (
   </ul>
 )
 export default ShowData
+export default getCastData

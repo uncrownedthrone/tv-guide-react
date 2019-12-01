@@ -27,8 +27,12 @@ const App = () => {
       </header>
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
-        <Route exact path="/ShowPage" component={ShowPage}></Route>
-        <Route exact path="/CastPage" component={CastMemberShowsPage}></Route>
+        <Route exact path="/ShowPage/:show" component={ShowPage}></Route>
+        <Route
+          exact
+          path="/CastPage/:member"
+          component={CastMemberShowsPage}
+        ></Route>
         <Route path="*" component={NotFound}></Route>
       </Switch>
     </Router>

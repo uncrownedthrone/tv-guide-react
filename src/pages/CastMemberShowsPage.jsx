@@ -1,7 +1,12 @@
 import React from 'react'
+import CastMemberInfo from '../components/C - CastMemberShows'
 
 const CastMemberShowsPage = () => {
-  return <div></div>
+  return (
+    <>
+      <CastMemberInfo />
+    </>
+  )
 }
 
 export default CastMemberShowsPage
