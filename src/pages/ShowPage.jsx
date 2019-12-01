@@ -1,12 +1,12 @@
 import React from 'react'
-import CastMemberList from '../components/C - CastMemberShows'
+import ShowInfo from '../components/N - ShowPageData'
 
 const ShowPage = () => {
   return (
     <div>
       <section></section>
       <section>
-        <CastMemberList />
+        <ShowInfo />
       </section>
     </div>
   )
