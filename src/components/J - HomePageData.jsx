@@ -39,7 +39,7 @@ const ShowAPIInfo = () => {
             <h2>{tvShow[random].name}</h2>
             <p className="rating">Rating: {tvShow[random].vote_average}</p>
             <hr></hr>
-            <p>{tvShow[random].overview}</p>
+            <p className="overview">{tvShow[random].overview}</p>
           </section>
         </section>
         <section className="allShows">
@@ -58,7 +58,7 @@ const ShowAPIInfo = () => {
                   <br></br>
                   <li className="rating">Rating: {show.vote_average}</li>
                   <hr></hr>
-                  <li>{show.overview}</li>
+                  <li className="overview">{show.overview}</li>
                 </div>
               )
             })}
