@@ -18,15 +18,14 @@ const CastMemberInfo = props => {
   }, [])
 
   return (
-    <section>
-      <section>
-        <img
-          src={`https://image.tmdb.org/t/p/w500${memberData.profile_path}`}
-        />
-        <p>
-          {memberData.name} - {memberData.biography}
-        </p>
-      </section>
+    <section className="randomShow">
+      <img
+        className="CastImage"
+        src={`https://image.tmdb.org/t/p/w500${memberData.profile_path}`}
+      />
+      <p className="CharacterInfo">
+        {memberData.name} - {memberData.biography}
+      </p>
     </section>
   )
 }
