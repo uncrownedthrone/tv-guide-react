@@ -59,14 +59,17 @@ div {
   margin-bottom: 1rem;
 }
 
-.randomShowCover {
+.randomShowCover,
+.ShowPoster,
+.CastImage {
   height: 450px;
   border-radius: 5px;
   margin-right: 1rem;
   box-shadow: -12px 15px 19px 1px rgba(0, 0, 0, 0.75);
 }
 
-.randomShow {
+.randomShow,
+.ShowInfo {
   display: flex;
   justify-content: center;
   border-radius: 5px;
@@ -77,7 +80,8 @@ div {
   padding-bottom: 3rem;
 }
 
-.randomShowName {
+.randomShowName,
+.showTitle {
   font-size: 2.5rem;
   justify-content: center;
   display: flex;
@@ -94,15 +98,30 @@ div {
   font-size: 2rem;
 }
 
-.rating {
+.rating,
+.AirDate {
   font-size: 1.25rem;
   color: #f06543;
 }
 
-.overview {
+.overview,
+.ShowOverview {
   font-size: 1.25rem;
 }
 
 .lower {
+  font-size: 2rem;
+}
+
+img {
+  height: 400px;
+}
+
+.link {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.CharacterInfo {
   font-size: 2rem;
 }

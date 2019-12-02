@@ -28,6 +28,7 @@ const ShowAPIInfo = () => {
 
   return (
     <>
+      <h1>TV Showcase Showdown!</h1>
       <section className="mainPage">
         <section className="randomShow">
           <img
